@@ -1,11 +1,11 @@
 
 # Authentication Demo App
 
-A simple React application that demonstrates user authentication using local storage. This project provides a complete authentication flow including registration, login, and account management.
+A simple React application that demonstrates user authentication using local storage. This project provides a complete authentication flow that includes registration, login, and account management.
 
 ## Live Demo
 
-**URL**: [https://lovable.dev/projects/04f1522f-5d9f-418b-9773-a3ab3b713d80](https://lovable.dev/projects/04f1522f-5d9f-418b-9773-a3ab3b713d80)
+**URL**:
 
 ## Features
 
