@@ -5,7 +5,7 @@ A simple React application that demonstrates user authentication using local sto
 
 ## Live Demo
 
-**URL**:
+**URL**: https://authable-dashboard.vercel.app/
 
 ## Features
 
