@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { z } from 'zod';
+import { AlertCircle } from 'lucide-react';
 
 // Validation schemas
 const loginSchema = z.object({
@@ -94,6 +95,13 @@ const Login = () => {
     }
   };
 
+  const setDemoCredentials = () => {
+    setLoginForm({ 
+      email: "demo@example.com", 
+      password: "password123" 
+    });
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-blue-50 to-white">
       <div className="w-full max-w-md mx-auto">
@@ -143,6 +151,26 @@ const Login = () => {
                       className={errors.password ? "border-red-500" : ""}
                     />
                     {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password}</p>}
+                  </div>
+
+                  <div className="p-3 border rounded-md bg-muted/30">
+                    <div className="flex items-start gap-2">
+                      <AlertCircle className="h-4 w-4 mt-0.5 text-muted-foreground" />
+                      <div>
+                        <p className="text-sm font-medium">Demo Credentials</p>
+                        <p className="text-xs text-muted-foreground mt-1">Email: demo@example.com</p>
+                        <p className="text-xs text-muted-foreground">Password: password123</p>
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="mt-2 h-7 text-xs w-full"
+                          type="button"
+                          onClick={setDemoCredentials}
+                        >
+                          Fill Demo Credentials
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </CardContent>
                 <CardFooter>

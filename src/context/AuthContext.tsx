@@ -31,6 +31,25 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Create a demo account if none exists
+  const createDemoAccount = () => {
+    const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
+    const demoExists = storedUsers.some((u: any) => u.email === 'demo@example.com');
+    
+    if (!demoExists) {
+      const demoUser = {
+        id: crypto.randomUUID(),
+        name: 'Demo User',
+        email: 'demo@example.com',
+        password: 'password123'
+      };
+      
+      storedUsers.push(demoUser);
+      localStorage.setItem('users', JSON.stringify(storedUsers));
+      console.log('Demo account created');
+    }
+  };
+
   // Load user from localStorage on initial render
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -42,6 +61,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         localStorage.removeItem('user');
       }
     }
+    
+    // Create demo account for testing
+    createDemoAccount();
+    
     setLoading(false);
   }, []);
 
