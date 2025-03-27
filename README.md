@@ -1,69 +1,89 @@
-# Welcome to your Lovable project
 
-## Project info
+# Authentication Demo App
 
-**URL**: https://lovable.dev/projects/04f1522f-5d9f-418b-9773-a3ab3b713d80
+A simple React application that demonstrates user authentication using local storage. This project provides a complete authentication flow including registration, login, and account management.
 
-## How can I edit this code?
+## Live Demo
 
-There are several ways of editing your application.
+**URL**: [https://lovable.dev/projects/04f1522f-5d9f-418b-9773-a3ab3b713d80](https://lovable.dev/projects/04f1522f-5d9f-418b-9773-a3ab3b713d80)
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/04f1522f-5d9f-418b-9773-a3ab3b713d80) and start prompting.
+- User registration with name, email, and password
+- User login with email and password
+- Persistent authentication using localStorage
+- Account management (logout, delete account)
+- Demo account for easy testing
+- Mobile responsive design
+- Form validation
 
-Changes made via Lovable will be committed automatically to this repo.
+## Demo Credentials
 
-**Use your preferred IDE**
+For quick testing, you can use the following demo credentials:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Email**: demo@example.com
+- **Password**: password123
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+A demo account is automatically created when the application loads.
 
-Follow these steps:
+## Technologies Used
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
 - React
-- shadcn-ui
+- TypeScript
+- Vite
 - Tailwind CSS
+- shadcn/ui components
+- Zod for form validation
+- React Router for navigation
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/04f1522f-5d9f-418b-9773-a3ab3b713d80) and click on Share -> Publish.
+### Prerequisites
 
-## I want to use a custom domain - is that possible?
+Make sure you have Node.js and npm installed on your system.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+### Installation
+
+1. Clone the repository:
+   ```sh
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+   ```sh
+   cd authentication-demo-app
+   ```
+
+3. Install the dependencies:
+   ```sh
+   npm install
+   ```
+
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+5. Open your browser and visit:
+   ```
+   http://localhost:8080
+   ```
+
+## Project Structure
+
+- `src/components/` - UI components
+- `src/pages/` - Page components for different routes
+- `src/context/` - Context providers including AuthContext
+- `src/hooks/` - Custom React hooks
+
+## How It Works
+
+This application uses localStorage to simulate a backend authentication system. When users register, their information is stored in localStorage under the 'users' key. When they log in, their credentials are validated against the stored users. After successful authentication, the user data is stored in localStorage under the 'user' key to maintain a persistent session.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
